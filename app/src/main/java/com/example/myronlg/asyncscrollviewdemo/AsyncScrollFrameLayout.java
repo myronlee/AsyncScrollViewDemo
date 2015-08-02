@@ -18,8 +18,6 @@ import android.widget.Scroller;
  * Created by myron.lg on 2015/6/25.
  */
 public class AsyncScrollFrameLayout extends FrameLayout {
-
-
     private View bgView;
     private View fgView;
     private ViewPager viewPager;
@@ -199,12 +197,14 @@ public class AsyncScrollFrameLayout extends FrameLayout {
         MotionEvent cancelEvent = MotionEvent.obtain(ev);
         cancelEvent.setAction(MotionEvent.ACTION_CANCEL);
         super.dispatchTouchEvent(cancelEvent);
+        cancelEvent.recycle();
     }
 
     private void dispatchDownEvent(MotionEvent ev){
         MotionEvent downEvent = MotionEvent.obtain(ev);
         downEvent.setAction(MotionEvent.ACTION_DOWN);
         super.dispatchTouchEvent(downEvent);
+        downEvent.recycle();
     }
     private boolean onEnd(MotionEvent ev) {
         if (fgView.getScrollY() <= 0) {
