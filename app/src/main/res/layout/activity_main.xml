@@ -1,0 +1,60 @@
+<com.example.myronlg.asyncscrollviewdemo.AsyncScrollFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/asv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <!-- 背景 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
+
+    <!-- 内容 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 用户信息 -->
+        <LinearLayout
+            android:id="@+id/user_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bg_visual_height"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/potrait"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/potrait" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="myron.lee"
+                android:textColor="@android:color/primary_text_dark" />
+        </LinearLayout>
+
+        <com.astuetz.PagerSlidingTabStrip
+            android:id="@+id/tv_anchor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/anchor_height"
+            android:layout_below="@+id/user_info_container"
+            android:background="@android:color/white"
+            />
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:layout_below="@+id/tv_anchor"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</com.example.myronlg.asyncscrollviewdemo.AsyncScrollFrameLayout>
